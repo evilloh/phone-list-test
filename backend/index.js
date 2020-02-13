@@ -12,5 +12,7 @@ app.listen(port, function() {
 
 app.get('/phones',function(req,res)
 {
-res.json(phones);
+  setTimeout(() => {
+    res.json(phones);
+  }, 500);
 });

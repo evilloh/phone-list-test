@@ -3,7 +3,7 @@ import Phone from './Phone';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { getPhones } from '../../actions/phonesActions'
-
+import Spinner from './spinner'
 class Phones extends Component {
 
 
@@ -15,6 +15,7 @@ class Phones extends Component {
     const { Phones } = this.props;
     return (
       <React.Fragment>
+        
         <h1 className="display-4 mb-2 title">
           <span className="text-info">Phones</span> List
         </h1>
@@ -22,6 +23,7 @@ class Phones extends Component {
           {Phones.map(phone => (
             <Phone key={phone.id} phone={phone} />
           ))}
+          {Phones.length ? null : <div className="spinner-container"><Spinner/></div>}
         </div>
 
       </React.Fragment>
